@@ -3,7 +3,7 @@
     --input-error: hsl(0, 100%, 66%);
     --white: white;
     --light-grayish-violet: hsl(270, 3%, 87%);
-    --dark-grayish-violet:  hsl(279, 6%, 55%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
     --very-dark-violet: hsl(278, 68%, 11%);
     --grad-start: hsl(249, 99%, 64%);
     --grad-end: hsl(278, 94%, 30%);
@@ -18,12 +18,12 @@ body {
     flex-direction: column;
 }
 
-section.card {
+section.card-holder {
     width: 100%;
     position: relative;
 }
 
-section.card picture img {
+section.card-holder picture img {
     width: 100%;
 }
 
@@ -54,15 +54,15 @@ div.card {
 }
 
 .front-card header .circle {
-    width: 30px;
-    height: 30px;
+    width: 7vw;
+    height: 7vw;
     border-radius: 50%;
     background-color: white;
 }
 
 .front-card header .hollowcircle {
-    width: 15px;
-    height: 15px;
+    width: 4vw;
+    height: 4vw;
     border: 1px solid white;
     border-radius: 50%;
 }
@@ -80,6 +80,7 @@ div.card {
     justify-content: space-between;
     opacity: .8;
     letter-spacing: .1rem;
+    text-transform: uppercase;
 }
 
 .back-card {
@@ -95,67 +96,201 @@ div.card {
     top: 41.5%;
     color: white;
     font-size: .7rem;
+    letter-spacing: .05rem;
+    font-weight: 0;
 }
 
 section.inputs {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     height: 100%;
+    width: 100%;
     padding: 40px 30px;
 }
 
 section.inputs input {
     width: 100%;
-    padding: 10px 20px;
+    height: 14vw;
+    max-height: 55px;
+    padding: 0 20px;
     font-size: .9rem;
     border-radius: var(--card-border-radius);
-    border: 1px solid gray;
+    border: 1px solid #d4d4d4;
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
 section.inputs input::placeholder {
-    color: var(--light-grayish-violet);
+    color: #d2d0d2;
+    font-size: 1.1rem;
+}
+
+section.inputs input.active {
+    border-color: var(--input-error);
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    display: none;
+    margin-top: 5px;
+    color: var(--input-error);
+    width: 100%;
+}
+
+.error.active {
+    display: block;
 }
 
 .input-section {
     display: flex;
     flex-direction: column;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .input-section h3 {
     font-size: .8rem;
     letter-spacing: .2rem;
-    margin-bottom: 5px;
-    color: var(--very-dark-violet);
-}
-
-div.row {
-    display: flex;
-    gap: .5rem;
-}
-
-.input-field {
-    display: flex;
-    gap: .5rem;
-}
-
-.input-field.special {
-    width: 90%;
-}
-
-#exp-month, #exp-year {
-    width: 35%;
-}
-
-#exp {
-    width: 10px;;
+    margin-bottom: 8px;
+    color: #6a6373;
 }
 
 #confirm {
     background-color: var(--very-dark-violet);
-    color: white;
+    color: var(--light-grayish-violet);
+    font-size: 1.3rem;
     margin: 20px 0;
-    height: 3rem;
+    height: 3.7rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.row .input-section:last-child {
+    width: 100%;
+}
+
+div#exp .input-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+div#exp .input-field input {
+    width: 45%;
+}
+
+@media (min-width: 600px) {
+    :root {
+        font-size: 16px;
+        --card-width: 23.4vw;
+        --card-height: 12.9vw;
+    }
+
+    body {
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+
+    section.card-holder {
+        width: 30%;
+        height: 100%;
+        position: relative;
+    }
+
+    section.card-holder picture {
+        width: 100%;
+        height: inherit;
+    }
+
+    section.card-holder picture img {
+        object-fit: fill;
+        height: inherit;
+    }
+
+    div.card {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.456);
+    }
+
+    div.front-card {
+        display: flex;
+        background-repeat: no-repeat;
+        padding: 1.5vw;
+        top: 9vw;
+        left: 15vw;
+    }
+
+    div.front-card header {
+        gap: 1rem;
+    }
+
+    div.front-card header .circle {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    div.front-card header .hollowcircle {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+
+    div.front-card main .number {
+        font-size: 1.6vw;
+        margin-bottom: 1vw;
+    }
+
+    div.front-card main footer {
+        font-size: .7vw;
+    }
+
+    div.back-card {
+        display: flex;
+        position: absolute;
+        top: 24vw;
+        left: 20vw;
+    }
+
+    div.back-card p {
+        font-size: 1vw;
+        top: 5.65vw;
+    }
+
+    section.inputs {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 17vw;
+        position: relative;
+        z-index: 200;
+        margin-top: 0;
+    }
+
+    section.inputs .input-section {
+        width: 100%;
+    }
+
+    .row {
+        gap: 2rem;
+    }
+
+    section.inputs input {
+        width: 100%;
+    }
 }
