@@ -1,0 +1,161 @@
+:root {
+    font-size: 4vw;
+    --input-error: hsl(0, 100%, 66%);
+    --white: white;
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet:  hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --grad-start: hsl(249, 99%, 64%);
+    --grad-end: hsl(278, 94%, 30%);
+    --card-border-radius: .5rem;
+    --card-width: 70vw;
+    --card-height: 40vw;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+section.card {
+    width: 100%;
+    position: relative;
+}
+
+section.card picture img {
+    width: 100%;
+}
+
+div.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: var(--card-border-radius);
+}
+
+.front-card {
+    background-image: url(../images/bg-card-front.png);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 5%;
+    top: 45%;
+    z-index: 100;
+}
+
+.front-card header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+}
+
+.front-card header .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.front-card header .hollowcircle {
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.front-card main .number {
+    font-size: 1.2rem;
+    letter-spacing: .05rem;
+    margin-bottom: 10px;
+}
+
+.front-card main footer {
+    font-size: .6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: .8;
+    letter-spacing: .1rem;
+}
+
+.back-card {
+    background-color: var(--light-grayish-violet);
+    position: absolute;
+    top: 8%;
+    right: 5%;
+}
+
+.back-card p {
+    position: absolute;
+    right: 12%;
+    top: 41.5%;
+    color: white;
+    font-size: .7rem;
+}
+
+section.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 40px 30px;
+}
+
+section.inputs input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: .9rem;
+    border-radius: var(--card-border-radius);
+    border: 1px solid gray;
+    outline: none;
+}
+
+section.inputs input::placeholder {
+    color: var(--light-grayish-violet);
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.input-section h3 {
+    font-size: .8rem;
+    letter-spacing: .2rem;
+    margin-bottom: 5px;
+    color: var(--very-dark-violet);
+}
+
+div.row {
+    display: flex;
+    gap: .5rem;
+}
+
+.input-field {
+    display: flex;
+    gap: .5rem;
+}
+
+.input-field.special {
+    width: 90%;
+}
+
+#exp-month, #exp-year {
+    width: 35%;
+}
+
+#exp {
+    width: 10px;;
+}
+
+#confirm {
+    background-color: var(--very-dark-violet);
+    color: white;
+    margin: 20px 0;
+    height: 3rem;
+}
