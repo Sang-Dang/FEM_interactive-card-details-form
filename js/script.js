@@ -1,3 +1,5 @@
+const submitButton = document.querySelector("#confirm");
+
 function updateValueBasic(start, des) {
     if (start.value === "") {
         des.innerHTML = start.getAttribute('data-empty');
@@ -69,3 +71,19 @@ onlynumbers.forEach(item => {
         }
     })
 })
+
+document.querySelectorAll(".fullnumber").forEach(item => {
+    item.addEventListener('blur', () => {
+        if(item.value.length < 2 && item.value.length > 0) {
+            item.value = "0" + item.value;
+        }
+    })
+})
+
+submitButton.addEventListener('click', () => {
+    if(document.querySelectorAll(".error.active").length == 0) {
+        document.querySelector("section.inputs").classList.add("disabled");
+        document.querySelector("section.complete").classList.add("active");
+    }
+})
+

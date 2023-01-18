@@ -107,6 +107,13 @@ section.inputs {
     height: 100%;
     width: 100%;
     padding: 40px 30px;
+    z-index: 10;
+}
+
+section.inputs * {
+    opacity: 1;
+    transition: all 0.2s linear;
+    z-index: 10;
 }
 
 section.inputs input {
@@ -164,12 +171,33 @@ section.inputs input.active {
     color: #6a6373;
 }
 
+.input-submit {
+    width: 100%;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
 #confirm {
+    width: 100%;
     background-color: var(--very-dark-violet);
     color: var(--light-grayish-violet);
     font-size: 1.3rem;
     margin: 20px 0;
     height: 3.7rem;
+    transition: all 0.1s linear;
+}
+
+#confirm:hover {
+    opacity: .8;
+}
+
+#confirm:active {
+    width: 95%;
+    height: 3rem;
+    margin: 22.5px 0;
 }
 
 .row {
@@ -192,6 +220,56 @@ div#exp .input-field {
 
 div#exp .input-field input {
     width: 45%;
+}
+
+section.complete {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+section.complete.active {
+    display: flex;
+}
+
+section.complete * {
+    z-index: 100;
+}
+
+section.complete h1 {
+    text-transform: uppercase;
+    color: var(--very-dark-violet);
+    letter-spacing: .5rem;
+    margin: 25px 0 15px;
+    font-size: 2rem;
+}
+
+section.complete p {
+    color: var(--dark-grayish-violet);
+    letter-spacing: .1rem;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+section.complete button {
+    width: 400px;
+    background-color: var(--very-dark-violet);
+    color: var(--light-grayish-violet);
+    padding: 10px 0;
+    border-radius: var(--card-border-radius);
+    outline: none;
+}
+
+section.inputs.disabled *, section.inputs.disabled {
+    display: none;
 }
 
 @media (min-width: 600px) {

@@ -53,14 +53,18 @@
     <div class="input-section">
       <h3>CARDHOLDER NAME</h3>
       <div class="input-field">
-        <input type="text" name="cardholder-name" oninput="updateValueBasic(this, document.getElementById('card-name'));" placeholder="e.g. Jane Appleseed" maxlength="70" data-empty="JANE APPLESEED" class="nonblank">
+        <input type="text" name="cardholder-name"
+          oninput="updateValueBasic(this, document.getElementById('card-name'));" placeholder="e.g. Jane Appleseed"
+          maxlength="70" data-empty="JANE APPLESEED" class="nonblank">
         <div class="error"></div>
       </div>
     </div>
     <div class="input-section">
       <h3>CARD NUMBER</h3>
       <div class="input-field">
-        <input type="text" name="card-number" placeholder="e.g. 1234 5678 9123 0000" oninput="updateValueCardNumber(this, document.getElementById('card-number'))" maxlength="19" data-empty="0000 0000 0000 0000" class="nonblank onlynumbers">
+        <input type="text" name="card-number" placeholder="e.g. 1234 5678 9123 0000"
+          oninput="updateValueCardNumber(this, document.getElementById('card-number'))" maxlength="19"
+          data-empty="0000 0000 0000 0000" class="nonblank onlynumbers">
         <div class="error"></div>
       </div>
     </div>
@@ -68,22 +72,39 @@
       <div class="input-section" id="exp">
         <h3>EXP. DATE (MM/YY)</h3>
         <div class="input-field">
-          <input type="text" name="exp-month" class="onlyNumbers nonblank" placeholder="MM" oninput="onlyNumber(this);updateValueBasic(this, document.querySelector('#exp-date .month'));" maxlength="2" data-empty="00">
-          <input type="text" name="exp-year" class="onlyNumbers nonblank" placeholder="YY" oninput="onlyNumber(this);updateValueBasic(this, document.querySelector('#exp-date .year'));" maxlength="2" data-empty="00">
+          <input type="text" name="exp-month" class="onlyNumbers nonblank fullnumber" placeholder="MM"
+            oninput="onlyNumber(this);updateValueBasic(this, document.querySelector('#exp-date .month'));" maxlength="2"
+            data-empty="00">
+          <input type="text" name="exp-year" class="onlyNumbers nonblank fullnumber" placeholder="YY"
+            oninput="onlyNumber(this);updateValueBasic(this, document.querySelector('#exp-date .year'));" maxlength="2"
+            data-empty="00">
           <div class="error"></div>
         </div>
       </div>
       <div class="input-section">
         <h3>CVC</h3>
         <div class="input-field">
-          <input type="text" name="cvc" class="onlyNumbers nonblank" placeholder="e.g. 123" oninput="onlyNumber(this);updateValueBasic(this, document.querySelector('#cvc'));" maxlength="3" data-empty="000">
+          <input type="text" name="cvc" class="onlyNumbers nonblank" placeholder="e.g. 123"
+            oninput="onlyNumber(this);updateValueBasic(this, document.querySelector('#cvc'));" maxlength="3"
+            data-empty="000">
           <div class="error"></div>
         </div>
       </div>
     </div>
-    <input type="submit" value="Confirm" id="confirm">
+    <div class="input-submit">
+      <input type="submit" value="Confirm" id="confirm">
+    </div>
   </section>
-
+  <section class="complete">
+    <img src="./images/icon-complete.svg" alt="Tick icon">
+    <div class="text">
+      <h1>Thank you</h1>
+      <p>We've added your card details</p>
+    </div>
+    <div class="functions">
+      <button>Continue</button>
+    </div>
+  </section>
   <!-- Thank you!
   We've added your card details
   Continue -->
