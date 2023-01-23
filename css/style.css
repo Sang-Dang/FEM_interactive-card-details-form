@@ -16,6 +16,7 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     display: flex;
     flex-direction: column;
+    overflow-x: none;
 }
 
 section.card-holder {
@@ -140,6 +141,10 @@ section.inputs input::placeholder {
 
 section.inputs input.active {
     border-color: var(--input-error);
+}
+
+section.inputs input:focus {
+    outline: 1px solid blue;
 }
 
 .input-field {
